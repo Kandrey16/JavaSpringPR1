@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../css/calculator.css"/>
+</head>
+<body>
+    <header>
+        <ul>
+            <form action="/calculate">
+                <li><button type="submit"></button></li>
+            </form>
+            <form action="/converter">
+                <li><button type="submit"></button></li>
+            </form>
+        </ul>
+    </header>
+    <p>Калькулятор</p>
+    <section class="background">
+        <form th:action="@{/calculate}" method="post">
+            <p class="result"><span th:text="${result}"></span></p>
+
+            <div class="container">
+                <input type="number" name="number1" placeholder="Число 1" required/>
+                <input type="number" name="number2" placeholder="Число 2" required/>
+                <select class="operator" name="operator" required>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <button type="submit" class="special-btn">=</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+

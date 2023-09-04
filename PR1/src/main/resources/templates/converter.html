@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертор</title>
+    <link rel="stylesheet" href="../css/converter.css"/>
+</head>
+<body>
+    <header>
+        <ul>
+            <form action="/calculate">
+                <li><button type="submit"></button></li>
+            </form>
+            <form action="/converter">
+                <li><button type="submit"></button></li>
+            </form>
+        </ul>
+    </header>
+    <p>Конвертор</p>
+    <section class="background">
+        <form th:action="@{/converter}" method="post">
+            <div class="container converter">
+                <output type="text" th:text="${result}"></output>
+                <select class="operator" name="currency1" required>
+                    <option value="1">USD</option>
+                    <option value="0.85">EUR</option>
+                    <option value="1.2">RUB</option>
+                </select>
+                <input type="number" name="number" placeholder="Валюта" required/>
+                <select class="operator" name="currency2" required>
+                    <option value="1">USD</option>
+                    <option value="0.85">EUR</option>
+                    <option value="1.2">RUB</option>
+                </select>
+                <button type="submit" class="special-btn">Рассчитать</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
